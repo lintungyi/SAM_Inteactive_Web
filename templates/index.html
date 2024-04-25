@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#helloButton").click(function(){
+                $.post("/hello", function(data){
+                    $("#message").text(data.message); // 修改這裡來更新網頁元素的內容
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="helloButton">Say Hello</button>
+    <p id="message">這裡會顯示來自後端的消息</p> <!-- 新增的顯示消息的元素 -->
+</body>
+</html>
